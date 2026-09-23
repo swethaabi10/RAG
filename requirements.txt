@@ -1,0 +1,44 @@
+# Requirements for Streamlit RAG Chatbot with Gemini API and ChromaDB
+
+# --- Core Frameworks ---
+streamlit
+
+# Google Gemini API SDK
+google-genai
+
+# --- Vector Store and Dependencies (Optimized for Streamlit Cloud) ---
+# NOTE: Using [hnsw] to enable fast indexing while avoiding dependency conflicts
+# that brought in 'uvloop' (which broke TTS).
+chromadb[hnsw]
+
+# CRITICAL FIX for SQLite issues on Streamlit Cloud's Linux environment
+pysqlite3-binary
+
+# --- Embedding Model ---
+# The model used by sentence-transformers for generating embeddings
+sentence-transformers
+
+# --- LangChain Ecosystem Components ---
+# For document splitting and general utilities
+langchain-text-splitters
+langchain-core
+langsmith
+
+# --- Document Loaders/Parsers ---
+# For various file types (PDF, Web Scraping, Data Files)
+pypdf 
+requests
+pandas
+beautifulsoup4
+lxml
+
+# --- Text-to-Speech (TTS) Fixes ---
+# Used for generating voice responses (Edge-TTS)
+gtts
+edge-tts
+
+# CRITICAL FIX: Allows async calls (like edge-tts) to run inside Streamlit's environment
+nest-asyncio
+
+# --- AgentOps Integration ---
+agentops
