@@ -311,7 +311,7 @@ def rag_pipeline(query, selected_language):
         prompt = f"### CONTEXT FROM DOCUMENTS\n{kb_context}\n\n### USER QUESTION: {query}"
         
     # 4. API Call (Skipped if cache hit)
-    response_json = call_gemini_api(prompt, model_name="gemini-2.5-flash", system_instruction=system_instruction)
+    response_json = call_gemini_api(prompt, model_name="gemini-3.6-flash", system_instruction=system_instruction)
 
     if 'error' in response_json:
         answer = f"Generation error: {response_json['error']}"
