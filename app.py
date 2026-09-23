@@ -210,7 +210,7 @@ def clear_rag_storage():
 # -------------------------
 # Utility functions (Generic model call)
 # -------------------------
-def call_gemini_api(prompt, model_name="gemini-2.5-flash", system_instruction="You are a helpful assistant.", max_retries=5):
+def call_gemini_api(prompt, model_name="gemini-3.6-flash", system_instruction="You are a helpful assistant.", max_retries=5):
     gemini_client = initialize_gemini_client()
     if not gemini_client:
         return {"error": "Gemini client not configured."}
